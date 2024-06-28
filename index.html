@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="public/netflix.ico" type="image/x-icon" />
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" async></script>
-    <title>Netflix</title>
+    <title>Netflix - Series y peliculas</title>
   </head>
 
   <body>
@@ -39,7 +40,7 @@
           </svg>
         </span>
         <article class="header_container_actions">
-          <select class="header_container_actions-language">
+          <select class="header_container_actions-language" id="select">
             <option value="es">ES</option>
             <option value="en">EN</option>
           </select>
@@ -47,11 +48,15 @@
         </article>
       </section>
       <section class="cover">
-        <h2 class="cover-title">Peliculas y series ilimitadas y mucho mas</h2>
-        <p class="cover-subtitle">
+        <h2 class="cover-title" id="titleCover">
+          Peliculas y series ilimitadas y mucho mas
+        </h2>
+        <p class="cover-subtitle" id="subtitleDisfruta">
           Disfruta donde quieras. Cancela cuando quieras.
         </p>
-        <p class="cover-subtitle-watch">
+        subtitleWathNow: '¿Quieres ver Netflix ya? Ingresa tu email para crear
+        una cuenta o reiniciar tu membresía de Netflix.',
+        <p class="cover-subtitle-watch" id="subtitleWathNow">
           Quieres ver Netflix ya ? Ingresa tu email para crear una cuenta o
           reiniciar tu membresia de Netflix.
         </p>
@@ -63,7 +68,7 @@
             required
             class="cover_actions-email"
           />
-          <label for="email" class="cover_actions-button"
+          <label for="email" class="cover_actions-button" id="buttonStart"
             >Comenzar
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,8 +96,8 @@
       <section class="details">
         <article class="details_info watch-tv">
           <div class="details_info-head">
-            <h2 class="title-tv">Disfruta en tu TV</h2>
-            <p class="subtitle-tv">
+            <h2 class="title-tv" id="titleEnjoyTv">Disfruta en tu TV</h2>
+            <p class="subtitle-tv" id="subtitleEnjoyTv">
               Ve en smart TV, PlayStation, Xbox, Chromecast, Apple TV,
               reproductores de Blu-ray y más.
             </p>
@@ -115,10 +120,10 @@
 
         <article class="details_info">
           <div class="details_info-head">
-            <h2 class="title-download">
+            <h2 class="title-download" id="titleDownloadOffline">
               Descarga tus series para verlas offline
             </h2>
-            <p class="subtitle-download">
+            <p class="subtitle-download" id="subtitleDownloadOffline">
               Guarda tu contenido favorito y tendrás siempre algo para ver.
             </p>
           </div>
@@ -140,6 +145,7 @@
                 </p>
                 <span
                   class="details_info_preview_container-download-info-subtitle"
+                  id="miniTitleDownloading"
                   >Descargando...</span
                 >
               </div>
@@ -154,8 +160,10 @@
 
         <article class="details_info-watch">
           <div class="details_info-head">
-            <h2 class="title-watch">Disfruta donde quieras</h2>
-            <p class="subtitle-watch">
+            <h2 class="title-watch" id="titleEnjoyPlace">
+              Disfruta donde quieras
+            </h2>
+            <p class="subtitle-watch" id="subtitleEnjoyPlace">
               Películas y series ilimitadas en tu teléfono, tablet, laptop y TV.
             </p>
           </div>
@@ -176,8 +184,10 @@
 
         <article class="details_info details-children">
           <div class="details_info-head">
-            <h2 class="title-child">Crea perfiles para niños</h2>
-            <p class="subtitle-child">
+            <h2 class="title-child" id="titleMakeProfile">
+              Crea perfiles para niños
+            </h2>
+            <p class="subtitle-child" id="subtitleMakeProfile">
               Los niños vivirán aventuras con sus personajes favoritos en un
               espacio diseñado exclusivamente para ellos, sin costo con tu
               membresía.
@@ -193,12 +203,16 @@
         </article>
 
         <article class="details_info-questions">
-          <h2 class="title-question">Preguntas frecuentes</h2>
+          <h2 class="title-question" id="titleQuestionFrecuently">
+            Preguntas frecuentes
+          </h2>
 
           <div class="details_info-container">
             <details class="details_info_questions">
               <summary class="details_info_questions-title">
-                <p class="subtitle-question">¿Qué es Netflix?</p>
+                <p class="subtitle-question" id="titleWhatIsNetflix">
+                  ¿Qué es Netflix?
+                </p>
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -234,7 +248,9 @@
 
             <details class="details_info_questions">
               <summary class="details_info_questions-title">
-                <p class="subtitle-question">¿Cuánto cuesta Netflix?</p>
+                <p class="subtitle-question" id="titleHowCostNetflix">
+                  ¿Cuánto cuesta Netflix?
+                </p>
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -266,7 +282,9 @@
 
             <details class="details_info_questions">
               <summary class="details_info_questions-title">
-                <p class="subtitle-question">¿Dónde puedo ver Netflix?</p>
+                <p class="subtitle-question" id="titleWhereCanWatch">
+                  ¿Dónde puedo ver Netflix?
+                </p>
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -307,7 +325,7 @@
 
             <details class="details_info_questions">
               <summary class="details_info_questions-title">
-                <p class="subtitle-question">¿Cómo cancelo?</p>
+                <p class="subtitle-question" id="titleCancel">¿Cómo cancelo?</p>
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -338,7 +356,9 @@
 
             <details class="details_info_questions">
               <summary class="details_info_questions-title">
-                <p class="subtitle-question">¿Qué puedo ver en Netflix?</p>
+                <p class="subtitle-question" id="titleCanWatchNetflix">
+                  ¿Qué puedo ver en Netflix?
+                </p>
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -369,7 +389,7 @@
 
             <details class="details_info_questions">
               <summary class="details_info_questions-title">
-                <p class="subtitle-question">
+                <p class="subtitle-question" id="titleIsGoodNetflix">
                   ¿Es bueno Netflix para los niños?
                 </p>
                 <span>
@@ -410,7 +430,7 @@
         </article>
 
         <article class="details_info-watch-now">
-          <p class="subtitle-watch-now">
+          <p class="subtitle-watch-now" id="titleCanYouWatchNetflix">
             ¿Quieres ver Netflix ya? Ingresa tu email para crear una cuenta o
             reiniciar tu membresía de Netflix.
           </p>
@@ -448,33 +468,49 @@
     </main>
 
     <footer class="footer">
-      <p class="subtitle-footer">
+      <p class="subtitle-footer" id="titleHaveQuestion">
         ¿Preguntas? Llama al
         <a href="tel: 012345" class="contact">012345</a>
       </p>
 
       <ul class="footer_links">
-        <li class="footer_links-item"><a href="#">Preguntas frecuentes</a></li>
-        <li class="footer_links-item"><a href="#">Cuenta</a></li>
         <li class="footer_links-item">
-          <a href="#">Relaciones con inversionistas</a>
+          <a href="#" id="link1">Preguntas frecuentes</a>
         </li>
-        <li class="footer_links-item"><a href="#">Formas de ver</a></li>
-        <li class="footer_links-item"><a href="#">Privacidad</a></li>
+        <li class="footer_links-item"><a href="#" id="link5">Cuenta</a></li>
         <li class="footer_links-item">
-          <a href="#">Informacion corporativa</a>
+          <a href="#" id="link9">Relaciones con inversionistas</a>
         </li>
-        <li class="footer_links-item"><a href="#">Prueba de velocidad</a></li>
-        <li class="footer_links-item"><a href="#">Solo en Netflix</a></li>
-        <li class="footer_links-item"><a href="#">Centro de ayuda</a></li>
-        <li class="footer_links-item"><a href="#">Prensa</a></li>
-        <li class="footer_links-item"><a href="#">Empleo</a></li>
-        <li class="footer_links-item"><a href="#">Terminos de uso</a></li>
         <li class="footer_links-item">
-          <a href="#">Preferencias de cookies</a>
+          <a href="#" id="link13">Formas de ver</a>
         </li>
-        <li class="footer_links-item"><a href="#">Contactanos</a></li>
-        <li class="footer_links-item"><a href="#">Avisos legales</a></li>
+        <li class="footer_links-item"><a href="#" id="link2">Privacidad</a></li>
+        <li class="footer_links-item">
+          <a href="#" id="link6">Informacion corporativa</a>
+        </li>
+        <li class="footer_links-item">
+          <a href="#" id="link10">Prueba de velocidad</a>
+        </li>
+        <li class="footer_links-item">
+          <a href="#" id="link14">Solo en Netflix</a>
+        </li>
+        <li class="footer_links-item">
+          <a href="#" id="link3">Centro de ayuda</a>
+        </li>
+        <li class="footer_links-item"><a href="#" id="link7">Prensa</a></li>
+        <li class="footer_links-item"><a href="#" id="link11">Empleo</a></li>
+        <li class="footer_links-item">
+          <a href="#" id="link15">Terminos de uso</a>
+        </li>
+        <li class="footer_links-item">
+          <a href="#" id="link4">Preferencias de cookies</a>
+        </li>
+        <li class="footer_links-item">
+          <a href="#" id="link8">Contactanos</a>
+        </li>
+        <li class="footer_links-item">
+          <a href="#" id="link12">Avisos legales</a>
+        </li>
       </ul>
 
       <section class="footer_language-country">
@@ -484,7 +520,7 @@
         </select>
         <p class="titleNetflixPy">Netflix Paraguay</p>
       </section>
-      <p class="developer">Copia desarrollado por Fabio Sosa ✨</p>
+      <p class="developer" id="dev">Copia desarrollado por Fabio Sosa ✨</p>
     </footer>
   </body>
 </html>
