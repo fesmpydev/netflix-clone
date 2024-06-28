@@ -25,6 +25,9 @@ He desarrollado una réplica de la página principal de Netflix utilizando HTML,
 ![Captura de pantalla 2](https://raw.githubusercontent.com/fesmpydev/netflix-clone/main/public/mobile-1.jpg)
 ![Captura de pantalla 2](https://raw.githubusercontent.com/fesmpydev/netflix-clone/main/public/preview-desktop-2.jpg)
 
+## Visualizacion del sitio
+[link](https://fesmpydev.github.io/netflix-clone/)
+
 ## Próximos Pasos
 
 En el futuro, planeo mejorar esta réplica añadiendo más funcionalidades avanzadas como:
