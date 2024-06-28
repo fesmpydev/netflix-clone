@@ -2,6 +2,7 @@ const languages = [
   {
     es: {
       titleCover: "Películas y series ilimitadas y mucho más",
+      buttonStartSession: "Iniciar sesion",
       subtitleDisfruta: "Disfruta donde quieras. Cancela cuando quieras.",
       subtitleWathNow:
         "¿Quieres ver Netflix ya? Ingresa tu email para crear una cuenta o reiniciar tu membresía de Netflix.",
@@ -50,6 +51,7 @@ const languages = [
   {
     en: {
       titleCover: "Unlimited movies, TV shows, and more.",
+      buttonStartSession: "Log in",
       subtitleDisfruta: "Watch anywhere. Cancel anytime.",
       subtitleWathNow:
         "Ready to watch Netflix? Enter your email to create or restart your membership.",
@@ -139,8 +141,13 @@ const listId = [
 ];
 
 const select = document.getElementById("select");
+const select2 = document.getElementById("select2");
+const btnLogin = document.getElementById("buttonStartSession");
+const btnStart = document.getElementById("buttonStart");
 let language;
 const nodes = listId.map((item) => document.getElementById(item));
+
+const messageIndicator = document.getElementById("messageIndicator");
 
 const handleChangeLanguage = () => {
   const englishListOptions = ["en-US", "en", "English"];
@@ -149,14 +156,32 @@ const handleChangeLanguage = () => {
       node.textContent = languages[1].en[node.getAttribute("id")];
     });
     select.value = "en";
+    select2.value = "en";
   } else if (["es-ES", "es"].includes(language)) {
     nodes.forEach((node) => {
       node.textContent = languages[0].es[node.getAttribute("id")];
     });
     select.value = "es";
+    select2.value = "es";
   }
 
   return;
+};
+
+const addMessageOnBuilding = () => {
+  const paragraph = document.createElement("h2");
+  paragraph.setAttribute("id", "temp");
+  paragraph.textContent = ["es", "es-ES"].includes(language)
+    ? "Esto esta en construccion"
+    : "Oops, this is under construction";
+
+  messageIndicator.appendChild(paragraph);
+  messageIndicator.classList.add("messageIndicator");
+
+  setTimeout(() => {
+    messageIndicator.classList.remove("messageIndicator");
+    document.getElementById("temp").remove();
+  }, 4000);
 };
 
 window.document.addEventListener("DOMContentLoaded", () => {
@@ -167,4 +192,17 @@ window.document.addEventListener("DOMContentLoaded", () => {
 select.addEventListener("change", (e) => {
   language = e.target.value;
   handleChangeLanguage();
+});
+
+select2.addEventListener("change", (e) => {
+  language = e.target.value;
+  handleChangeLanguage();
+});
+
+btnLogin.addEventListener("click", (e) => {
+  addMessageOnBuilding();
+});
+
+btnStart.addEventListener("click", (e) => {
+  addMessageOnBuilding();
 });

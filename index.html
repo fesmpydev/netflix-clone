@@ -11,6 +11,7 @@
 
   <body>
     <header class="header">
+      <div id="messageIndicator"></div>
       <div class="shadow_parent">
         <div class="shadow_container">
           <img
@@ -44,7 +45,12 @@
             <option value="es">ES</option>
             <option value="en">EN</option>
           </select>
-          <button class="header_container_actions-login">Iniciar sesion</button>
+          <button
+            class="header_container_actions-login"
+            id="buttonStartSession"
+          >
+            Iniciar sesion
+          </button>
         </article>
       </section>
       <section class="cover">
@@ -54,8 +60,7 @@
         <p class="cover-subtitle" id="subtitleDisfruta">
           Disfruta donde quieras. Cancela cuando quieras.
         </p>
-        subtitleWathNow: '¿Quieres ver Netflix ya? Ingresa tu email para crear
-        una cuenta o reiniciar tu membresía de Netflix.',
+
         <p class="cover-subtitle-watch" id="subtitleWathNow">
           Quieres ver Netflix ya ? Ingresa tu email para crear una cuenta o
           reiniciar tu membresia de Netflix.
@@ -65,7 +70,6 @@
             type="email"
             placeholder="Email"
             id="email"
-            required
             class="cover_actions-email"
           />
           <label for="email" class="cover_actions-button" id="buttonStart"
@@ -439,10 +443,9 @@
               type="email"
               placeholder="Email"
               id="email"
-              required
               class="cover_actions-email"
             />
-            <label for="email" class="cover_actions-button"
+            <label for="email" class="cover_actions-button" id="buttonStart"
               >Comenzar
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -514,9 +517,9 @@
       </ul>
 
       <section class="footer_language-country">
-        <select class="header_container_actions-language-footer">
-          <option value="es">Español</option>
-          <option value="en">English</option>
+        <select class="header_container_actions-language-footer" id="select2">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
         </select>
         <p class="titleNetflixPy">Netflix Paraguay</p>
       </section>

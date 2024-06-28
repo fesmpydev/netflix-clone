@@ -15,6 +15,12 @@ body {
   background-color: Canvas;
   color: CanvasText;
   font-family: "roboto";
+  position: relative;
+}
+
+option {
+  background-color: #000;
+  color: #fff;
 }
 
 @font-face {
@@ -50,6 +56,26 @@ body {
   src: url("./public/fonts/Roboto/Roboto-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
+}
+
+.messageIndicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 16px;
+  font-size: clamp(1.5rem, 5vw + 1.3rem, 2rem);
+  transition: transform 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  padding-top: 20px;
+  background-color: #fff;
+  color: #fff;
+  text-align: center;
+  background-image: url("public/fix.jpg");
+  object-fit: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .header {
@@ -518,6 +544,7 @@ body {
   text-align: center;
   font-size: 1.4rem;
   color: #d9d7bd;
+  margin-top: 30px;
   font-weight: 300;
 }
 
